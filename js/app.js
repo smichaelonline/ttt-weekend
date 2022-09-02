@@ -18,11 +18,12 @@ let board, turn, winner
 let squareEls = document.querySelectorAll(".board > div")
 let messageEl = document.querySelector('#message')
 let boardEl = document.querySelector('.board')
+const resetBtnEl = document.querySelector('#reset-button')
 
 /*----------------------------- Event Listeners -----------------------------*/
 
 boardEl.addEventListener('click', handleClick)
-
+resetBtnEl.addEventListener('click',init)
 
 /*-------------------------------- Functions --------------------------------*/
 
@@ -66,7 +67,7 @@ function render(){
 function handleClick(evt){
   const sqIdx = parseInt(evt.target.id[2])
   //console.log(sqIdx)
-  if (winner === 1 || winner === -1) {
+  if (winner) {
     return  
   } 
 
@@ -100,11 +101,3 @@ function getWinner(){
   } 
   return null
 }
-
-
- //let comboValue = 0
-// combo.forEach(function(position){
-    //   comboValue += board[position]
-      //console.log(position)
-    // })
-  //console.log(comboValue);
