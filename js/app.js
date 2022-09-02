@@ -76,4 +76,7 @@ function handleClick(evt){
 
   board[sqIdx]= turn 
   turn = turn * -1
+  
+  winner = getWinner()
+  render()
 }
