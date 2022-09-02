@@ -78,6 +78,10 @@
   //     because that square is already taken. Also, if `winner` is not `null`
   //     immediately `return` because the game is over.
 
+  //* this step we're only creating return statements for two events: One is if the winner value is 1(x) or -1(o), we will return nothing. The other event is if there is a value in the sqidx (other player can't access the square and override the value) ex. [1, null, null, null, null, null, null, null, null] 
+
+  we're setting this up so that in these two events nothing will happen. 
+
   // 6e) Update the `board` array at the `sqIdx` with the current value of
   //     `turn`.
 

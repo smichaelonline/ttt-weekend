@@ -61,8 +61,19 @@ function render(){
     messageEl.textContent = "Player two wins!"
   }
 }
-  
+
+//!! STEP 6a-6h within handle click function!!!
 function handleClick(evt){
   const sqIdx = parseInt(evt.target.id[2])
-  // console.log(sqIdx)
+  //console.log(sqIdx)
+  if (winner === 1 || winner === -1) {
+    return  
+  } 
+
+  if (board[sqIdx]){
+    return
+  }
+
+  board[sqIdx]= turn 
+  turn = turn * -1
 }
