@@ -127,7 +127,7 @@
 
 // 7c) If there is no winner, check to see if there is a tie. Set the  
   //     `winner` variable to `'T'` if there are no more nulls in the board  
-  //     array byreturning the string `'T'`.
+  //     array by returning the string `'T'`.
 
   // 7d) If there is no winner and there isn’t a tie, return `null`.
 

@@ -6,7 +6,7 @@ let winningCombos = [
     [0, 4, 8],[2, 4, 6]
   ]
 
-  console.log(winningCombos)
+  //console.log(winningCombos)
 
 
 /*---------------------------- Variables (state) ----------------------------*/
@@ -30,7 +30,7 @@ init()
 
 function init(){
   board = [null,null,null,null,null,null,null,null,null]
-  console.log(board)
+  //console.log(board)
   turn = 1 //represents player X
   winner = null
   render()
@@ -42,7 +42,7 @@ function render(){
     if (sq === 1) {
       squareEls[idx].textContent = 'X'
     } else if (sq === -1) {
-      squareEls[idx].textContent = '0'
+      squareEls[idx].textContent = 'O'
     } else {
       squareEls[idx].textContent = ''
     }
@@ -80,3 +80,31 @@ function handleClick(evt){
   winner = getWinner()
   render()
 }
+
+function getWinner(){
+  let bestCombo = []
+  winningCombos.forEach(function(combo){
+    //combo will look like [0,1,2]
+    let comboValue = board[combo[0]]+ board[combo[1]]+ board[combo[2]]
+    //console.log(board)
+    bestCombo.push(Math.abs(comboValue))
+  })
+  let winnersCombo = bestCombo.some(function(value){
+    return value === 3
+  })
+  
+  if (winnersCombo === true){
+    return turn * -1
+  } else if (!board.some((value)=> value === null)){
+    return 'T'
+  } 
+  return null
+}
+
+
+ //let comboValue = 0
+// combo.forEach(function(position){
+    //   comboValue += board[position]
+      //console.log(position)
+    // })
+  //console.log(comboValue);
