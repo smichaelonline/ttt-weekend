@@ -52,6 +52,7 @@ div {
   font-size: 20px;
   padding: 10px 20px 10px 20px;
   text-decoration: none;
+  filter: drop-shadow(0 3px 4mm gray);
 }
 
 #reset-button:hover {
@@ -61,4 +62,5 @@ div {
 
 .heading {
   color:#E82426;
+  
 }

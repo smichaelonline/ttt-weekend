@@ -96,7 +96,7 @@ function getWinner(){
   let winnersCombo = bestCombo.some(function(value){
     return value === 3
   })
-  
+
   if (winnersCombo === true){
     return turn * -1
   } else if (!board.some((value)=> value === null)){
@@ -104,3 +104,5 @@ function getWinner(){
   } 
   return null
 }
+
+
