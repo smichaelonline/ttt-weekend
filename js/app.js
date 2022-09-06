@@ -42,29 +42,32 @@ function render(){
   board.forEach(function(sq, idx) {
     if (sq === 1) {
       squareEls[idx].textContent = 'X'
+      squareEls[idx].innerHTML = '<img id="sushi" src="https://i.pinimg.com/originals/ee/43/c8/ee43c8a6d714fff89ce371930a44a773.jpg" width="100px">'
     } else if (sq === -1) {
       squareEls[idx].textContent = 'O'
+      squareEls[idx].innerHTML = '<img id="chinese-food" src="https://i.pinimg.com/originals/95/91/85/95918563b52db5e196061091a9a9cdcd.jpg" width="100px">'
     } else {
       squareEls[idx].textContent = ''
     }
   })
   if (winner === null) {
     if(turn === 1) {
-      messageEl.textContent = "Player one - it's your turn!"
+      messageEl.textContent = "Yummy sushi! Player one - it's your turn!"
     } else {
-      messageEl.textContent = "Player two - it's your turn!"
+      messageEl.textContent = "Chinese food? Delish! Player two - it's your turn!"
     }
   } else if (winner === 'T') {
-    messageEl.textContent = "Looks like it's a tie!"
+    messageEl.textContent = "Why not both? It's a tie!"
   } else if (winner === 1) {
-    messageEl.textContent = "Player one wins!"
+    messageEl.textContent = "Good choice! Sushi wins!"
   } else if (winner === -1) {
-    messageEl.textContent = "Player two wins!"
+    messageEl.textContent = "Chinese food wins - sign me up! "
   }
 }
 
 //!! STEP 6a-6h within handle click function!!!
 function handleClick(evt){
+  console.log(evt)
   const sqIdx = parseInt(evt.target.id[2])
   //console.log(sqIdx)
   if (winner) {
